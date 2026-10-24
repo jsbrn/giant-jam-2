@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://xdebh1khggf1"]
+
+[ext_resource type="Script" uid="uid://dngq6wtyabq8x" path="res://world/player.gd" id="1_2gpuf"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_w5pmr"]
+size = Vector2(50, 180)
+
+[node name="Player" type="CharacterBody2D" unique_id=1428940175]
+script = ExtResource("1_2gpuf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=257297051]
+texture = SubResource("PlaceholderTexture2D_w5pmr")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=16903450]

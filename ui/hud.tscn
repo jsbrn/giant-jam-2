@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://d458aprpo8pw"]
 
+[ext_resource type="Script" uid="uid://bppm3qiukrilw" path="res://ui/hud/debug.gd" id="1_rbyyf"]
+
 [node name="HUD" type="Control" unique_id=1063190297]
 layout_mode = 3
 anchors_preset = 15
@@ -8,10 +10,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="." unique_id=1413607937]
+[node name="Debug" type="Label" parent="." unique_id=1413607937]
 layout_mode = 1
 offset_left = 16.0
 offset_top = 16.0
 offset_right = 89.0
 offset_bottom = 39.0
 text = "HUD Test"
+script = ExtResource("1_rbyyf")

@@ -7,4 +7,6 @@
 
 [node name="House" parent="." unique_id=281824880 instance=ExtResource("2_c61ut")]
 
-[node name="HUD" parent="." unique_id=1063190297 instance=ExtResource("1_80wxx")]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1029013192]
+
+[node name="HUD" parent="CanvasLayer" unique_id=1063190297 instance=ExtResource("1_80wxx")]
