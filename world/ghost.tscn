@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dhiu3yga7nhqv"]
+
+[ext_resource type="Script" uid="uid://oawoawwy6vbp" path="res://world/ghost.gd" id="1_vhie2"]
+
+[sub_resource type="Gradient" id="Gradient_k547n"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_k547n"]
+gradient = SubResource("Gradient_k547n")
+width = 80
+height = 180
+
+[node name="Ghost" type="CharacterBody2D" unique_id=1428940175]
+script = ExtResource("1_vhie2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=257297051]
+texture = SubResource("GradientTexture2D_k547n")

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dngq6wtyabq8x" path="res://world/player.gd" id="1_2gpuf"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_w5pmr"]
-size = Vector2(50, 180)
+size = Vector2(80, 180)
 
 [node name="Player" type="CharacterBody2D" unique_id=1428940175]
 script = ExtResource("1_2gpuf")
@@ -12,3 +12,9 @@ script = ExtResource("1_2gpuf")
 texture = SubResource("PlaceholderTexture2D_w5pmr")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=16903450]
+limit_left = -1500
+limit_top = -1500
+limit_right = 1500
+limit_bottom = 1500
+limit_smoothed = true
+position_smoothing_enabled = true
