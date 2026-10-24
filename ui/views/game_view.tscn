@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d2qrxfmfa1p6r" path="res://world/house.tscn" id="1_lbllo"]
 [ext_resource type="PackedScene" uid="uid://d458aprpo8pw" path="res://ui/hud/hud.tscn" id="2_lbllo"]
+[ext_resource type="PackedScene" uid="uid://dp7xnoxvdsc6k" path="res://ui/views/film_display.tscn" id="2_tltyi"]
 
 [node name="GameView" type="Node" unique_id=1992333946]
 
@@ -10,3 +11,6 @@
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=41252445]
 
 [node name="HUD" parent="CanvasLayer" unique_id=1063190297 instance=ExtResource("2_lbllo")]
+
+[node name="FilmDisplay" parent="CanvasLayer" unique_id=2074536532 instance=ExtResource("2_tltyi")]
+visible = false

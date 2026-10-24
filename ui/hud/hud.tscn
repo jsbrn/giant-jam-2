@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://d458aprpo8pw"]
 
 [ext_resource type="Script" uid="uid://bppm3qiukrilw" path="res://ui/hud/debug.gd" id="1_xmswo"]
+[ext_resource type="Texture2D" uid="uid://bqubo4cieguh2" path="res://assets/textures/blindness.png" id="2_4d6w6"]
+[ext_resource type="Script" uid="uid://dvu31gk2qda2g" path="res://ui/hud/blindness.gd" id="3_e0nub"]
 
 [node name="HUD" type="Control" unique_id=1063190297]
 layout_mode = 3
@@ -18,3 +20,15 @@ offset_right = 89.0
 offset_bottom = 39.0
 text = "HUD Test"
 script = ExtResource("1_xmswo")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=493511020]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4d6w6")
+expand_mode = 1
+stretch_mode = 3
+script = ExtResource("3_e0nub")

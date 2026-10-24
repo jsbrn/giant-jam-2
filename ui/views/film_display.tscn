@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dp7xnoxvdsc6k"]
+
+[ext_resource type="Script" uid="uid://cqhit08jer8ne" path="res://ui/views/film_display.gd" id="1_5ppcy"]
+[ext_resource type="AudioStream" uid="uid://ojljowvlu1kn" path="res://assets/audio/ragtime.ogg" id="2_1yhej"]
+
+[node name="FilmDisplay" type="Control" unique_id=2074536532]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5ppcy")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1244609010]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.65882355)
+
+[node name="Slide" type="TextureRect" parent="." unique_id=1345234621]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
+stretch_mode = 5
+
+[node name="NextSlide" type="Timer" parent="." unique_id=1056908598]
+one_shot = true
+
+[node name="RagtimePlayer" type="AudioStreamPlayer" parent="." unique_id=1386334424]
+stream = ExtResource("2_1yhej")
+
+[connection signal="timeout" from="NextSlide" to="." method="_on_next_slide_timeout"]

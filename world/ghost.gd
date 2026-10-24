@@ -1,6 +1,13 @@
 extends CharacterBody2D
 
+enum AttackType {
+	SLOWNESS,
+	BLINDNESS,
+	TELEPORT
+}
+
 const SPEED: float = 100
+@export var attack_type: AttackType
 
 @onready var nav: NavigationAgent2D = $NavigationAgent2D
 @onready var vision: RayCast2D = $Vision
@@ -23,7 +30,7 @@ func can_see_player() -> bool:
 	vision.target_position = player.global_position - global_position
 	vision.force_raycast_update()
 	var c: CollisionObject2D = vision.get_collider()
-	return c != null && c is Player
+	return c != null && c is Player && c.global_position.distance_to(global_position) <= 1080
 
 func _on_nav_recalc_timeout() -> void:
 	if can_see_player():
@@ -38,3 +45,13 @@ func _on_navigation_agent_2d_target_reached() -> void:
 
 func _on_random_target_timeout() -> void:
 	nav.target_position = random_target()
+
+
+func _on_player_touch_body_entered(body: Node2D) -> void:
+	var p: Player = body
+	if attack_type == AttackType.SLOWNESS:
+		p.slowness = 2
+	if attack_type == AttackType.BLINDNESS:
+		p.blindness = 2
+	if attack_type == AttackType.TELEPORT:
+		p.global_position = random_target()

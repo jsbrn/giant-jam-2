@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Movie" format=3 uid="uid://552qok3yyuy2"]
+
+[ext_resource type="Script" uid="uid://cp8mvwncf0wrt" path="res://assets/movies/movie.gd" id="1_xtmfe"]
+[ext_resource type="Texture2D" uid="uid://dd0l0ujx4oy78" path="res://assets/movies/slides/test/1.png" id="2_pdiaw"]
+[ext_resource type="Texture2D" uid="uid://dqyxhl8cvuj38" path="res://assets/movies/slides/test/2.png" id="3_cxkfy"]
+[ext_resource type="Texture2D" uid="uid://dw6o1dmu6npp4" path="res://assets/movies/slides/test/3.png" id="4_47xah"]
+
+[resource]
+script = ExtResource("1_xtmfe")
+slides = Array[CompressedTexture2D]([ExtResource("2_pdiaw"), ExtResource("3_cxkfy"), ExtResource("4_47xah")])
+durations = Array[float]([2.0, 1.0, 2.0])
+metadata/_custom_type_script = "uid://cp8mvwncf0wrt"
