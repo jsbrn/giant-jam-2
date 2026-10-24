@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d2qrxfmfa1p6r"]
 
 [ext_resource type="PackedScene" uid="uid://xdebh1khggf1" path="res://world/player.tscn" id="1_apcmc"]
+[ext_resource type="PackedScene" uid="uid://dhiu3yga7nhqv" path="res://world/ghost.tscn" id="2_jpscu"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_jpscu"]
 
@@ -9,24 +10,37 @@ width = 3000
 height = 3000
 noise = SubResource("FastNoiseLite_jpscu")
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_w5pmr"]
+vertices = PackedVector2Array(-1484.9766, 1485.0234, -923, -420, -260, -440, 260, -440, 1482.0234, 1492.9688, 1488.9688, -1484.0234, 260, -510, -1481.0078, -1490.9688, -923, -1065, -1036, -420, -1036, -1065, -260, -510)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 4, 3, 6), PackedInt32Array(7, 5, 6, 8), PackedInt32Array(9, 1, 0), PackedInt32Array(9, 0, 7, 10), PackedInt32Array(2, 1, 8, 11), PackedInt32Array(8, 10, 7), PackedInt32Array(8, 6, 11)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1491, -1501, 1499, -1494, 1492, 1503, -1495, 1495)])
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w5pmr"]
 size = Vector2(500, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_apcmc"]
 size = Vector2(93, 625)
 
-[node name="House" type="StaticBody2D" unique_id=1199612817]
-collision_layer = 4
+[node name="House" type="Node2D" unique_id=79995838]
 
 [node name="Floor" type="Sprite2D" parent="." unique_id=236698728]
 texture = SubResource("NoiseTexture2D_apcmc")
 
 [node name="Player" parent="." unique_id=1428940175 instance=ExtResource("1_apcmc")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1069508013]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=450251071]
+navigation_polygon = SubResource("NavigationPolygon_w5pmr")
+
+[node name="Ghost" parent="NavigationRegion2D" unique_id=1691634416 instance=ExtResource("2_jpscu")]
+
+[node name="Walls" type="StaticBody2D" parent="NavigationRegion2D" unique_id=1717943595]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Walls" unique_id=1069508013]
 position = Vector2(0, -475)
 shape = SubResource("RectangleShape2D_w5pmr")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1013805629]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="NavigationRegion2D/Walls" unique_id=1013805629]
 position = Vector2(-979.5, -742.5)
 shape = SubResource("RectangleShape2D_apcmc")
