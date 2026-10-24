@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bnw6bqwc4ati3"]
+
+[ext_resource type="Script" uid="uid://cajkyg34jeiu4" path="res://world/painting.gd" id="1_4848a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5pmr"]
+size = Vector2(100, 150)
+
+[node name="Painting" type="Area2D" unique_id=1746873869]
+collision_layer = 0
+script = ExtResource("1_4848a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=57218208]
+shape = SubResource("RectangleShape2D_w5pmr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

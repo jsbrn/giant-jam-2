@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://xdebh1khggf1" path="res://world/player.tscn" id="1_apcmc"]
 [ext_resource type="PackedScene" uid="uid://dhiu3yga7nhqv" path="res://world/ghost.tscn" id="2_jpscu"]
 [ext_resource type="PackedScene" uid="uid://bqnlp13ldmeie" path="res://world/projector.tscn" id="3_v4e3w"]
+[ext_resource type="PackedScene" uid="uid://bnw6bqwc4ati3" path="res://world/painting.tscn" id="4_2skef"]
+[ext_resource type="PackedScene" uid="uid://ddykfq2u5eeiy" path="res://world/collectible.tscn" id="5_27kdi"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_jpscu"]
 
@@ -12,8 +14,8 @@ height = 3000
 noise = SubResource("FastNoiseLite_jpscu")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_w5pmr"]
-vertices = PackedVector2Array(-1484.9766, 1485.0234, -923, -420, -260, -440, 260, -440, 1482.0234, 1492.9688, 1488.9688, -1484.0234, 260, -510, -1481.0078, -1490.9688, -923, -1065, -1036, -420, -1036, -1065, -260, -510)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 4, 3, 6), PackedInt32Array(7, 5, 6, 8), PackedInt32Array(9, 1, 0), PackedInt32Array(9, 0, 7, 10), PackedInt32Array(2, 1, 8, 11), PackedInt32Array(8, 10, 7), PackedInt32Array(8, 6, 11)])
+vertices = PackedVector2Array(-923, -420, -260, -440, 260, -440, -392, -234, -462, -234, -1481, 1443.3828, -626.5, 971.5, 407.5, 949.5, 520.5, 949.5, 1468.75, 1443.3828, -392, -164, 474.5, -500.5, 587.5, -500.5, 520.5, 304.5, 407.5, 304.5, 723, 795, 653, 795, -739.5, 971.5, 653, 725, 587.5, -1145.5, 1468.75, -1467.3828, 723, 725, -1133, 891, -739.5, 326.5, -1203, 891, -1481, -1467.3828, -1203, 821, 474.5, -1145.5, 260, -510, -270.5, -737.5, -270.5, -1382.5, -260, -510, -383.5, -737.5, -1133, 821, -923, -1065, -626.5, 326.5, -462, -164, -383.5, -1382.5, -1036, -420, -1036, -1065)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8, 9), PackedInt32Array(10, 3, 2, 11, 12, 13, 14), PackedInt32Array(15, 9, 8, 16), PackedInt32Array(17, 6, 5), PackedInt32Array(16, 8, 13, 18), PackedInt32Array(12, 19, 20, 9, 21), PackedInt32Array(17, 5, 22, 23), PackedInt32Array(24, 22, 5), PackedInt32Array(24, 5, 25, 26), PackedInt32Array(27, 11, 28, 29, 30), PackedInt32Array(11, 2, 28), PackedInt32Array(29, 28, 31, 32), PackedInt32Array(23, 22, 33), PackedInt32Array(31, 1, 0, 34, 32), PackedInt32Array(10, 14, 7, 6, 35, 36), PackedInt32Array(37, 32, 34, 25), PackedInt32Array(23, 33, 26, 25, 38), PackedInt32Array(21, 18, 13, 12), PackedInt32Array(0, 4, 36, 35, 23, 38), PackedInt32Array(9, 15, 21), PackedInt32Array(39, 38, 25), PackedInt32Array(34, 39, 25), PackedInt32Array(37, 25, 20, 30), PackedInt32Array(30, 20, 19, 27)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-1491, -1501, 1499, -1494, 1492, 1503, -1495, 1495)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w5pmr"]
@@ -42,6 +44,7 @@ navigation_polygon = SubResource("NavigationPolygon_w5pmr")
 position = Vector2(-1347, -821)
 
 [node name="BlindGhost" parent="NavigationRegion2D" unique_id=700121897 instance=ExtResource("2_jpscu")]
+position = Vector2(1088, -1232)
 attack_type = 1
 
 [node name="TeleportGhost" parent="NavigationRegion2D" unique_id=1197571142 instance=ExtResource("2_jpscu")]
@@ -103,3 +106,13 @@ movie = "test"
 [node name="Projector3" parent="NavigationRegion2D" unique_id=534411383 instance=ExtResource("3_v4e3w")]
 position = Vector2(688, 760)
 movie = "test"
+
+[node name="Painting" parent="NavigationRegion2D" unique_id=1746873869 instance=ExtResource("4_2skef")]
+position = Vector2(472, -360)
+
+[node name="Sword" parent="NavigationRegion2D" unique_id=1458262172 instance=ExtResource("5_27kdi")]
+position = Vector2(-392, 32)
+item = 1
+
+[node name="Vase" parent="NavigationRegion2D" unique_id=793397787 instance=ExtResource("5_27kdi")]
+position = Vector2(48, 232)

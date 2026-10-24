@@ -3,7 +3,7 @@ extends CharacterBody2D
 enum AttackType {
 	SLOWNESS,
 	BLINDNESS,
-	TELEPORT
+	DAMAGE
 }
 
 const SPEED: float = 100
@@ -15,6 +15,8 @@ const SPEED: float = 100
 
 func _ready() -> void:
 	nav.target_position = random_target()
+	if attack_type == AttackType.DAMAGE:
+		SignalBus.painting_slashed.connect(_on_painting_slashed)
 
 func _process(delta: float) -> void:
 	velocity = (nav.get_next_path_position() - global_position).normalized() * SPEED
@@ -52,6 +54,23 @@ func _on_player_touch_body_entered(body: Node2D) -> void:
 	if attack_type == AttackType.SLOWNESS:
 		p.slowness = 2
 	if attack_type == AttackType.BLINDNESS:
-		p.blindness = 2
-	if attack_type == AttackType.TELEPORT:
-		p.global_position = random_target()
+		if !p.has_vase:
+			p.blindness = 2
+		else:
+			p.has_vase = false
+			disappear()
+	if attack_type == AttackType.DAMAGE:
+		if p.has_sword:
+			disappear()
+		else:
+			p.health -= .5
+			if p.health <= 0:
+				p.global_position = random_target()
+				p.health = 1
+
+func _on_painting_slashed() -> void:
+	disappear()
+
+func disappear() -> void:
+	await create_tween().tween_property(self, "alpha", 0.0, 3)
+	queue_free()

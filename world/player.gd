@@ -4,6 +4,9 @@ extends CharacterBody2D
 const SPEED: float = 300.0
 var blindness: float = 0
 var slowness: float = 0
+var health: float = 1.0
+var has_sword: bool
+var has_vase: bool
 
 func _ready() -> void:
 	add_to_group("players")
