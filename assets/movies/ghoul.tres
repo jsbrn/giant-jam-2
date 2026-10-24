@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Movie" format=3 uid="uid://645t5cl7a6pt"]
+
+[ext_resource type="Script" uid="uid://cp8mvwncf0wrt" path="res://assets/movies/movie.gd" id="1_dhi2o"]
+[ext_resource type="Texture2D" uid="uid://ddlp3j0e1g1et" path="res://assets/movies/slides/ghoul/ghoul1.jpg" id="2_5q7hi"]
+[ext_resource type="Texture2D" uid="uid://c2ncxbi542c30" path="res://assets/movies/slides/ghoul/ghoul2.jpg" id="3_a5fb5"]
+[ext_resource type="Texture2D" uid="uid://blq7uh05bip6a" path="res://assets/movies/slides/ghoul/ghoul3.jpg" id="4_fgfu1"]
+[ext_resource type="Texture2D" uid="uid://1xckpqy2lmos" path="res://assets/movies/slides/ghoul/ghoul4.jpg" id="5_77jo5"]
+[ext_resource type="Texture2D" uid="uid://b2if2egprn1qq" path="res://assets/movies/slides/ghoul/ghoul5.jpg" id="6_3mw87"]
+
+[resource]
+script = ExtResource("1_dhi2o")
+slides = Array[CompressedTexture2D]([ExtResource("2_5q7hi"), ExtResource("3_a5fb5"), ExtResource("4_fgfu1"), ExtResource("5_77jo5"), ExtResource("6_3mw87")])
+durations = Array[float]([2.0, 2.0, 1.0, 1.0, 1.0])
+metadata/_custom_type_script = "uid://cp8mvwncf0wrt"

@@ -97,15 +97,15 @@ shape = SubResource("RectangleShape2D_apcmc")
 
 [node name="Projector" parent="NavigationRegion2D" unique_id=1916804202 instance=ExtResource("3_v4e3w")]
 position = Vector2(-427, -199)
-movie = "test"
+movie = "woman"
 
 [node name="Projector2" parent="NavigationRegion2D" unique_id=2073861018 instance=ExtResource("3_v4e3w")]
 position = Vector2(-1168, 856)
-movie = "test"
+movie = "knight"
 
 [node name="Projector3" parent="NavigationRegion2D" unique_id=534411383 instance=ExtResource("3_v4e3w")]
 position = Vector2(688, 760)
-movie = "test"
+movie = "ghoul"
 
 [node name="Painting" parent="NavigationRegion2D" unique_id=1746873869 instance=ExtResource("4_2skef")]
 position = Vector2(472, -360)
