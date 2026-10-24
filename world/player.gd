@@ -1,8 +1,8 @@
 class_name Player
 extends CharacterBody2D
 
-
 const SPEED: float = 300.0
+var health: int = 100 # Health is out of 100
 
 func _ready() -> void:
 	add_to_group("players")
