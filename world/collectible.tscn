@@ -1,14 +1,18 @@
 [gd_scene format=3 uid="uid://ddykfq2u5eeiy"]
 
 [ext_resource type="Script" uid="uid://hu47w8jdajmc" path="res://world/collectible.gd" id="1_g77r0"]
+[ext_resource type="Texture2D" uid="uid://cgd48w305n1u2" path="res://assets/textures/wallswords.png" id="2_2h52t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w5pmr"]
-size = Vector2(50, 50)
+size = Vector2(144, 144)
 
 [node name="Collectible" type="Area2D" unique_id=1458262172]
 script = ExtResource("1_g77r0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=716719722]
 shape = SubResource("RectangleShape2D_w5pmr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2026578103]
+texture = ExtResource("2_2h52t")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

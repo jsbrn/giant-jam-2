@@ -8,6 +8,8 @@ var health: float = 1.0
 var has_sword: bool
 var has_vase: bool
 
+@onready var anims: AnimatedSprite2D = $AnimatedSprite2D
+
 func _ready() -> void:
 	add_to_group("players")
 
@@ -27,5 +29,19 @@ func _physics_process(delta: float) -> void:
 		velocity = direction * SPEED * (0.5 if slowness > 0 else 1)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, SPEED)
+	
+	if direction == Vector2.ZERO:
+		anims.play("idle")
+	else:
+		if direction.y == 0:
+			if direction.x > 0:
+				anims.play("right")
+			else:
+				anims.play("left")
+		else:
+			if direction.y > 0:
+				anims.play("down")
+			else:
+				anims.play("up")
 
 	move_and_slide()

@@ -1,13 +1,150 @@
 [gd_scene format=3 uid="uid://dhiu3yga7nhqv"]
 
 [ext_resource type="Script" uid="uid://oawoawwy6vbp" path="res://world/ghost.gd" id="1_vhie2"]
+[ext_resource type="Texture2D" uid="uid://bhs2sqa6sgod" path="res://assets/textures/ghoul_spritesheet.png" id="2_0i1rt"]
+[ext_resource type="Texture2D" uid="uid://iqavnjhbxdxy" path="res://assets/textures/knight_spritesheet.png" id="2_k547n"]
+[ext_resource type="Texture2D" uid="uid://dqpofirj3sa3e" path="res://assets/textures/woman_spritesheet.png" id="4_cyyui"]
+[ext_resource type="AudioStream" uid="uid://cdu58xa5vk0w" path="res://assets/audio/teleport.mp3" id="5_q82l4"]
+[ext_resource type="AudioStream" uid="uid://cny7tdvsbybav" path="res://assets/audio/collapse.mp3" id="6_exi3y"]
+[ext_resource type="AudioStream" uid="uid://ej5u02hit24g" path="res://assets/audio/jumpscare.mp3" id="7_exi3y"]
 
-[sub_resource type="Gradient" id="Gradient_k547n"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7p0v0"]
+atlas = ExtResource("2_0i1rt")
+region = Rect2(0, 0, 500, 352)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_k547n"]
-gradient = SubResource("Gradient_k547n")
-width = 80
-height = 180
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucc1d"]
+atlas = ExtResource("2_0i1rt")
+region = Rect2(0, 352, 500, 352)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkc1l"]
+atlas = ExtResource("2_0i1rt")
+region = Rect2(0, 352, 500, 352)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k32tv"]
+atlas = ExtResource("2_0i1rt")
+region = Rect2(500, 0, 500, 352)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0i1rt"]
+atlas = ExtResource("2_k547n")
+region = Rect2(0, 353, 500, 353)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyyui"]
+atlas = ExtResource("2_k547n")
+region = Rect2(0, 706, 500, 353)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8qx4"]
+atlas = ExtResource("2_k547n")
+region = Rect2(500, 0, 500, 353)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q82l4"]
+atlas = ExtResource("2_k547n")
+region = Rect2(500, 353, 500, 353)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k547n"]
+atlas = ExtResource("2_k547n")
+region = Rect2(0, 0, 500, 353)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exi3y"]
+atlas = ExtResource("2_k547n")
+region = Rect2(0, 0, 500, 353)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10urh"]
+atlas = ExtResource("2_k547n")
+region = Rect2(0, 353, 500, 353)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oinot"]
+atlas = ExtResource("4_cyyui")
+region = Rect2(0, 352, 500, 352)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3hro"]
+atlas = ExtResource("4_cyyui")
+region = Rect2(500, 352, 500, 352)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nixr5"]
+atlas = ExtResource("4_cyyui")
+region = Rect2(0, 0, 500, 352)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0amj2"]
+atlas = ExtResource("4_cyyui")
+region = Rect2(500, 0, 500, 352)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vhie2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7p0v0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucc1d")
+}],
+"loop": 0,
+"name": &"ghoul_attack",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkc1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k32tv")
+}],
+"loop": 1,
+"name": &"ghoul_idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0i1rt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyyui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8qx4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q82l4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k547n")
+}],
+"loop": 0,
+"name": &"knight_attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exi3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10urh")
+}],
+"loop": 1,
+"name": &"knight_idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oinot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3hro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nixr5")
+}],
+"loop": 0,
+"name": &"woman_attack",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0amj2")
+}],
+"loop": 1,
+"name": &"woman_idle",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jpscu"]
 radius = 25.0
@@ -20,8 +157,10 @@ collision_layer = 2
 collision_mask = 4
 script = ExtResource("1_vhie2")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=257297051]
-texture = SubResource("GradientTexture2D_k547n")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=4585797]
+scale = Vector2(0.6800004, 0.6800004)
+sprite_frames = SubResource("SpriteFrames_vhie2")
+animation = &"knight_idle"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1193329502]
 target_desired_distance = 90.0
@@ -47,6 +186,18 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerTouch" unique_id=1925285344]
 shape = SubResource("RectangleShape2D_0pf81")
 
+[node name="Slash" type="AudioStreamPlayer2D" parent="." unique_id=1823843892]
+
+[node name="Teleport" type="AudioStreamPlayer2D" parent="." unique_id=1977753038]
+stream = ExtResource("5_q82l4")
+
+[node name="Collapse" type="AudioStreamPlayer2D" parent="." unique_id=1729161035]
+stream = ExtResource("6_exi3y")
+
+[node name="Jumpscare" type="AudioStreamPlayer2D" parent="." unique_id=1383543349]
+stream = ExtResource("7_exi3y")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
 [connection signal="timeout" from="NavRecalc" to="." method="_on_nav_recalc_timeout"]
 [connection signal="timeout" from="RandomTarget" to="." method="_on_random_target_timeout"]

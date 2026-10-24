@@ -8,9 +8,6 @@ size = Vector2(50, 50)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0pf81"]
 size = Vector2(100, 100)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ftqq7"]
-size = Vector2(50, 50)
-
 [node name="Projector" type="StaticBody2D" unique_id=1916804202]
 collision_layer = 4
 collision_mask = 3
@@ -23,8 +20,5 @@ shape = SubResource("RectangleShape2D_w5pmr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1170175312]
 shape = SubResource("RectangleShape2D_0pf81")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=124694095]
-texture = SubResource("PlaceholderTexture2D_ftqq7")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

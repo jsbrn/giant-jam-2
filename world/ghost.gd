@@ -8,14 +8,23 @@ enum AttackType {
 
 const SPEED: float = 100
 @export var attack_type: AttackType
+@export var ghost_type: String
 
 @onready var nav: NavigationAgent2D = $NavigationAgent2D
 @onready var vision: RayCast2D = $Vision
 @onready var target_timer: Timer = $RandomTarget
+@onready var anims: AnimatedSprite2D = $AnimatedSprite2D
+
+@onready var collapse: AudioStreamPlayer2D = $Collapse
+@onready var slash: AudioStreamPlayer2D = $Slash
+@onready var teleport: AudioStreamPlayer2D = $Teleport
+@onready var jumpscare: AudioStreamPlayer2D = $Jumpscare
+
 
 func _ready() -> void:
+	anims.play("%s_idle" % [ghost_type])
 	nav.target_position = random_target()
-	if attack_type == AttackType.DAMAGE:
+	if attack_type == AttackType.SLOWNESS:
 		SignalBus.painting_slashed.connect(_on_painting_slashed)
 
 func _process(delta: float) -> void:
@@ -25,7 +34,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func random_target() -> Vector2:
-	return Vector2(randi_range(-1500, 1500), randi_range(-1500, 1500))
+	return Vector2(randi_range(-500, 500), randi_range(-500, 500))
 
 func can_see_player() -> bool:
 	var player: Player = get_tree().get_first_node_in_group("players")
@@ -52,9 +61,12 @@ func _on_random_target_timeout() -> void:
 func _on_player_touch_body_entered(body: Node2D) -> void:
 	var p: Player = body
 	if attack_type == AttackType.SLOWNESS:
+		anims.play("%s_attack" % [ghost_type])
+		jumpscare.play()
 		p.slowness = 2
 	if attack_type == AttackType.BLINDNESS:
 		if !p.has_vase:
+			anims.play("%s_attack" % [ghost_type])
 			p.blindness = 2
 		else:
 			p.has_vase = false
@@ -63,10 +75,13 @@ func _on_player_touch_body_entered(body: Node2D) -> void:
 		if p.has_sword:
 			disappear()
 		else:
+			anims.play("%s_attack" % [ghost_type])
 			p.health -= .5
+			slash.play()
 			if p.health <= 0:
 				p.global_position = random_target()
 				p.health = 1
+				teleport.play()
 
 func _on_painting_slashed() -> void:
 	disappear()
@@ -74,3 +89,7 @@ func _on_painting_slashed() -> void:
 func disappear() -> void:
 	await create_tween().tween_property(self, "alpha", 0.0, 3)
 	queue_free()
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	anims.play("idle")

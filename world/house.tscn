@@ -1,118 +1,146 @@
 [gd_scene format=3 uid="uid://d2qrxfmfa1p6r"]
 
 [ext_resource type="PackedScene" uid="uid://xdebh1khggf1" path="res://world/player.tscn" id="1_apcmc"]
+[ext_resource type="Texture2D" uid="uid://c05l6mxdfmuw2" path="res://assets/textures/map.png" id="1_k7d7q"]
 [ext_resource type="PackedScene" uid="uid://dhiu3yga7nhqv" path="res://world/ghost.tscn" id="2_jpscu"]
 [ext_resource type="PackedScene" uid="uid://bqnlp13ldmeie" path="res://world/projector.tscn" id="3_v4e3w"]
 [ext_resource type="PackedScene" uid="uid://bnw6bqwc4ati3" path="res://world/painting.tscn" id="4_2skef"]
 [ext_resource type="PackedScene" uid="uid://ddykfq2u5eeiy" path="res://world/collectible.tscn" id="5_27kdi"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_jpscu"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_apcmc"]
-width = 3000
-height = 3000
-noise = SubResource("FastNoiseLite_jpscu")
-
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_w5pmr"]
-vertices = PackedVector2Array(-923, -420, -260, -440, 260, -440, -392, -234, -462, -234, -1481, 1443.3828, -626.5, 971.5, 407.5, 949.5, 520.5, 949.5, 1468.75, 1443.3828, -392, -164, 474.5, -500.5, 587.5, -500.5, 520.5, 304.5, 407.5, 304.5, 723, 795, 653, 795, -739.5, 971.5, 653, 725, 587.5, -1145.5, 1468.75, -1467.3828, 723, 725, -1133, 891, -739.5, 326.5, -1203, 891, -1481, -1467.3828, -1203, 821, 474.5, -1145.5, 260, -510, -270.5, -737.5, -270.5, -1382.5, -260, -510, -383.5, -737.5, -1133, 821, -923, -1065, -626.5, 326.5, -462, -164, -383.5, -1382.5, -1036, -420, -1036, -1065)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8, 9), PackedInt32Array(10, 3, 2, 11, 12, 13, 14), PackedInt32Array(15, 9, 8, 16), PackedInt32Array(17, 6, 5), PackedInt32Array(16, 8, 13, 18), PackedInt32Array(12, 19, 20, 9, 21), PackedInt32Array(17, 5, 22, 23), PackedInt32Array(24, 22, 5), PackedInt32Array(24, 5, 25, 26), PackedInt32Array(27, 11, 28, 29, 30), PackedInt32Array(11, 2, 28), PackedInt32Array(29, 28, 31, 32), PackedInt32Array(23, 22, 33), PackedInt32Array(31, 1, 0, 34, 32), PackedInt32Array(10, 14, 7, 6, 35, 36), PackedInt32Array(37, 32, 34, 25), PackedInt32Array(23, 33, 26, 25, 38), PackedInt32Array(21, 18, 13, 12), PackedInt32Array(0, 4, 36, 35, 23, 38), PackedInt32Array(9, 15, 21), PackedInt32Array(39, 38, 25), PackedInt32Array(34, 39, 25), PackedInt32Array(37, 25, 20, 30), PackedInt32Array(30, 20, 19, 27)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-1491, -1501, 1499, -1494, 1492, 1503, -1495, 1495)])
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5pmr"]
-size = Vector2(500, 50)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_apcmc"]
-size = Vector2(93, 625)
+vertices = PackedVector2Array(10, 162, 206, 150.65625, 604.75, 150.65625, 483, 205, 413, 205, -250, -53.421875, -92, -53.421875, -50, -46.65625, -318.15625, -46.65625, -398, -51.3125, 483, 275, 604.75, 603.3828, 10, 603.3828, 413, 275, 10, 250.67188, -50, -326.65625, -92, -298, -50, 162, -50, 250.67188, 206, -38.65625, 10, -326.65625, 14, -443.67188, -57, -405.71094, -57, -486, -46, -486, -46, -443.67188, 14, -486, 310, -486, 310, -117, 533, -117, 533, -486, 604.75, -486, 604.75, -38.65625, -318.15625, 142.65625, -50, 142.65625, -398, 138, -50, 603.3828, -209.92969, 603.3828, -612.75, 598.2422, -612.75, 138, -459, -51.3125, -459, -242.28906, -250, -298, -612.75, -242.28906, -612.75, -486, -215, -486, -215, -405.71094)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8, 9), PackedInt32Array(10, 3, 2, 11), PackedInt32Array(10, 11, 12, 13), PackedInt32Array(13, 12, 14, 4), PackedInt32Array(15, 7, 6, 16), PackedInt32Array(17, 0, 4, 14, 18), PackedInt32Array(19, 1, 0, 20, 21), PackedInt32Array(22, 23, 24, 25), PackedInt32Array(21, 26, 27, 28, 19), PackedInt32Array(29, 30, 31, 32), PackedInt32Array(29, 32, 19, 28), PackedInt32Array(22, 25, 21, 20, 15), PackedInt32Array(33, 34, 17), PackedInt32Array(35, 18, 36, 37, 38, 39), PackedInt32Array(17, 18, 35, 33), PackedInt32Array(8, 33, 35, 9), PackedInt32Array(5, 9, 40, 41, 42), PackedInt32Array(41, 43, 44, 45, 46, 42), PackedInt32Array(46, 22, 15, 16, 42)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-624, -616, 616, -624, 624, 624, -632, 608)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4e3w"]
 size = Vector2(66.5, 3018.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7d7q"]
+size = Vector2(3104.625, 194.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7hkr2"]
+size = Vector2(280.3125, 169.3125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2k7f"]
+size = Vector2(420.15625, 169.3125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j30yj"]
+size = Vector2(280.3125, 204.65625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rk82d"]
+size = Vector2(396.15625, 169.3125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_by6l3"]
+size = Vector2(40, 468.65625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1tm5"]
+size = Vector2(138, 224.58203)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2skef"]
 size = Vector2(3104.625, 69.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0pf81"]
+size = Vector2(203, 385)
 
 [node name="House" type="Node2D" unique_id=79995838]
 
 [node name="Floor" type="Sprite2D" parent="." unique_id=236698728]
-texture = SubResource("NoiseTexture2D_apcmc")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_k7d7q")
 
 [node name="Player" parent="." unique_id=1428940175 instance=ExtResource("1_apcmc")]
+position = Vector2(328, 496)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=450251071]
 navigation_polygon = SubResource("NavigationPolygon_w5pmr")
 
-[node name="SlowGhost" parent="NavigationRegion2D" unique_id=1691634416 instance=ExtResource("2_jpscu")]
-position = Vector2(-1347, -821)
+[node name="Ghoul" parent="NavigationRegion2D" unique_id=1691634416 instance=ExtResource("2_jpscu")]
+position = Vector2(-408, -368)
+ghost_type = "ghoul"
 
-[node name="BlindGhost" parent="NavigationRegion2D" unique_id=700121897 instance=ExtResource("2_jpscu")]
-position = Vector2(1088, -1232)
-attack_type = 1
-
-[node name="TeleportGhost" parent="NavigationRegion2D" unique_id=1197571142 instance=ExtResource("2_jpscu")]
-position = Vector2(836, 807)
+[node name="Knight" parent="NavigationRegion2D" unique_id=700121897 instance=ExtResource("2_jpscu")]
+position = Vector2(184, -336)
 attack_type = 2
+ghost_type = "knight"
+
+[node name="Woman" parent="NavigationRegion2D" unique_id=1197571142 instance=ExtResource("2_jpscu")]
+position = Vector2(-368, 320)
+attack_type = 1
+ghost_type = "woman"
 
 [node name="Walls" type="StaticBody2D" parent="NavigationRegion2D" unique_id=1717943595]
 collision_layer = 4
 collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Walls" unique_id=1069508013]
-position = Vector2(0, -475)
-shape = SubResource("RectangleShape2D_w5pmr")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="NavigationRegion2D/Walls" unique_id=1013805629]
-position = Vector2(-979.5, -742.5)
-shape = SubResource("RectangleShape2D_apcmc")
-
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="NavigationRegion2D/Walls" unique_id=1898521009]
-position = Vector2(-1524.25, 1.75)
+position = Vector2(-656, 0)
 shape = SubResource("RectangleShape2D_v4e3w")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="NavigationRegion2D/Walls" unique_id=987806134]
-position = Vector2(1512, -24)
+position = Vector2(648, -24)
 shape = SubResource("RectangleShape2D_v4e3w")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="NavigationRegion2D/Walls" unique_id=567664680]
-position = Vector2(-8.3125, -1512)
-shape = SubResource("RectangleShape2D_2skef")
+position = Vector2(120, -593.3125)
+shape = SubResource("RectangleShape2D_k7d7q")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="NavigationRegion2D/Walls" unique_id=303177311]
+position = Vector2(-548.15625, 43.34375)
+shape = SubResource("RectangleShape2D_7hkr2")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="NavigationRegion2D/Walls" unique_id=1863310179]
+position = Vector2(-98.078125, 48)
+shape = SubResource("RectangleShape2D_i2k7f")
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="NavigationRegion2D/Walls" unique_id=1379364738]
+position = Vector2(120, 366.32813)
+shape = SubResource("RectangleShape2D_j30yj")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="NavigationRegion2D/Walls" unique_id=832228184]
+position = Vector2(414.07813, 56)
+shape = SubResource("RectangleShape2D_rk82d")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="NavigationRegion2D/Walls" unique_id=138531649]
+position = Vector2(-20, -82.328125)
+shape = SubResource("RectangleShape2D_by6l3")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="NavigationRegion2D/Walls" unique_id=1945373755]
+position = Vector2(-16, -688)
+shape = SubResource("RectangleShape2D_by6l3")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="NavigationRegion2D/Walls" unique_id=1519570082]
+position = Vector2(-20, 495)
+shape = SubResource("RectangleShape2D_by6l3")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="NavigationRegion2D/Walls" unique_id=1399734332]
+position = Vector2(-171, -175.70898)
+shape = SubResource("RectangleShape2D_n1tm5")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="NavigationRegion2D/Walls" unique_id=2035085446]
+position = Vector2(-538, -120)
+shape = SubResource("RectangleShape2D_n1tm5")
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="NavigationRegion2D/Walls" unique_id=555598371]
+position = Vector2(-136, -528)
+shape = SubResource("RectangleShape2D_n1tm5")
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="NavigationRegion2D/Walls" unique_id=1199129920]
-position = Vector2(16, 1488)
+position = Vector2(1, 648)
 shape = SubResource("RectangleShape2D_2skef")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="NavigationRegion2D/Walls" unique_id=1305691130]
-position = Vector2(-683, 649)
-shape = SubResource("RectangleShape2D_apcmc")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="NavigationRegion2D/Walls" unique_id=1801224844]
-position = Vector2(464, 627)
-shape = SubResource("RectangleShape2D_apcmc")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="NavigationRegion2D/Walls" unique_id=122697998]
-position = Vector2(531, -823)
-shape = SubResource("RectangleShape2D_apcmc")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="NavigationRegion2D/Walls" unique_id=585839480]
-position = Vector2(-327, -1060)
-shape = SubResource("RectangleShape2D_apcmc")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Walls" unique_id=48329813]
+position = Vector2(421.5, -319.5)
+shape = SubResource("RectangleShape2D_0pf81")
 
 [node name="Projector" parent="NavigationRegion2D" unique_id=1916804202 instance=ExtResource("3_v4e3w")]
-position = Vector2(-427, -199)
-movie = "woman"
-
-[node name="Projector2" parent="NavigationRegion2D" unique_id=2073861018 instance=ExtResource("3_v4e3w")]
-position = Vector2(-1168, 856)
-movie = "knight"
-
-[node name="Projector3" parent="NavigationRegion2D" unique_id=534411383 instance=ExtResource("3_v4e3w")]
-position = Vector2(688, 760)
-movie = "ghoul"
+position = Vector2(448, 240)
 
 [node name="Painting" parent="NavigationRegion2D" unique_id=1746873869 instance=ExtResource("4_2skef")]
-position = Vector2(472, -360)
+position = Vector2(136, -584)
 
 [node name="Sword" parent="NavigationRegion2D" unique_id=1458262172 instance=ExtResource("5_27kdi")]
-position = Vector2(-392, 32)
+position = Vector2(-176, 64)
 item = 1
 
 [node name="Vase" parent="NavigationRegion2D" unique_id=793397787 instance=ExtResource("5_27kdi")]
-position = Vector2(48, 232)
+position = Vector2(-568, -416)

@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://d458aprpo8pw"]
 
+[ext_resource type="Script" uid="uid://ch1n6vu8jld8x" path="res://ui/hud/hud.gd" id="1_o2lis"]
 [ext_resource type="Script" uid="uid://bppm3qiukrilw" path="res://ui/hud/debug.gd" id="1_xmswo"]
 [ext_resource type="Texture2D" uid="uid://bqubo4cieguh2" path="res://assets/textures/blindness.png" id="2_4d6w6"]
 [ext_resource type="Script" uid="uid://dvu31gk2qda2g" path="res://ui/hud/blindness.gd" id="3_e0nub"]
 [ext_resource type="Script" uid="uid://tadadjl8j6fk" path="res://ui/hud/health.gd" id="4_w75iv"]
+[ext_resource type="Texture2D" uid="uid://b0prglafiaiur" path="res://assets/textures/icons/sword.png" id="5_imuuq"]
+[ext_resource type="Texture2D" uid="uid://bprjjsqibj2m8" path="res://assets/textures/urn.png" id="7_gfles"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w75iv"]
 bg_color = Color(0.8901961, 0.015686275, 0.2784314, 1)
@@ -19,6 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_o2lis")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=493511020]
 layout_mode = 1
@@ -58,3 +62,33 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_w75iv")
 max_value = 1.0
 show_percentage = false
 script = ExtResource("4_w75iv")
+
+[node name="Sword" type="TextureRect" parent="." unique_id=828456159]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -184.0
+offset_right = -60.0
+offset_bottom = -84.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_imuuq")
+
+[node name="Vase" type="TextureRect" parent="." unique_id=2098056233]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -184.0
+offset_right = 140.0
+offset_bottom = -84.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_gfles")

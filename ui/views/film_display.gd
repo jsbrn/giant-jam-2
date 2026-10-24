@@ -9,7 +9,7 @@ var slide_number: int = 0
 
 func _ready() -> void:
 	for p: Projector in get_tree().get_nodes_in_group("projectors"):
-		p.activated.connect(show_movie.bind(p.movie))
+		p.activated.connect(show_movie)
 
 func show_movie(mname: String) -> void:
 	music.play()
