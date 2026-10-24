@@ -15,7 +15,8 @@ size = Vector2(500, 50)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_apcmc"]
 size = Vector2(93, 625)
 
-[node name="House" type="Node2D" unique_id=281824880]
+[node name="House" type="StaticBody2D" unique_id=1199612817]
+collision_layer = 4
 
 [node name="Floor" type="Sprite2D" parent="." unique_id=236698728]
 texture = SubResource("NoiseTexture2D_apcmc")
